@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+<body>
+    <h1><%= spot.title%></h1>
+    <h2><%= spot.location%></h1>
+    <h3><%= spot.description%></h1>
+    <p>
+        <a href="/spots/<%=spot._id%>/edit">Edit Spot</a>
+    </p>
+    <p>
+        <form action="/spots/<%=spot._id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+    </p>
+        <footer>
+        <a href="/spots">All Spots</a>
+    </footer>
+</body>
+</html>
