@@ -4,7 +4,7 @@ app for places to visit. each location is called a 'spot' where it includes titl
 included a map API whch allows to see locations on a map grid.
 made with HTML, CSS, and mostly JavaScript.
 
-Functionality includes: basic CRUD operations for each 'spot'.
+
 
 You will need the following npm commands:
 npm i express
