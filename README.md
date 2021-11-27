@@ -12,3 +12,10 @@ npm i path
 npm i mongoose
 npm i method-override
 npm i ejs-mate
+
+version 3:
+- updated with bootstrap css
+
+version 4:
+- updated with security using joi
+- error and validating edit and new spot routes
