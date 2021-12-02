@@ -12,3 +12,7 @@ npm i path
 npm i mongoose
 npm i method-override
 npm i ejs-mate
+
+version 5: 
+- bug fixes
+- authentication emplimented
