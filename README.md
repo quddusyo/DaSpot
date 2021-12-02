@@ -12,3 +12,8 @@ npm i path
 npm i mongoose
 npm i method-override
 npm i ejs-mate
+
+version8:
+- shorter routes pages in reviews and spots using controllers
+- show page now shows star ratings using staribility
+- reviews now show stars to correcponding review
