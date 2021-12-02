@@ -16,3 +16,4 @@ npm i ejs-mate
 version 5: 
 - bug fixes
 - authentication emplimented
+- bootstrap 5 styles implimented
