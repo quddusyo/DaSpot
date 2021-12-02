@@ -12,3 +12,10 @@ npm i path
 npm i mongoose
 npm i method-override
 npm i ejs-mate
+
+version7 includes:
+- Authorizaion of review routes and spot routes
+- new errors for invalid requests through app or outside sources
+  - example/ Postman
+- show route now shows author of the spot
+- show route now shows author of spot review  
