@@ -12,3 +12,8 @@ npm i path
 npm i mongoose
 npm i method-override
 npm i ejs-mate
+
+version6:
+- authentication implemented
+- register, login, logout routes added alongside bootstrap5 styles
+- errors updated
