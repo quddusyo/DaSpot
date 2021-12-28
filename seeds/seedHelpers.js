@@ -1,3 +1,4 @@
+// seeds for random names
 module.exports.descriptors = [
     'Forest',
     'Ancient',

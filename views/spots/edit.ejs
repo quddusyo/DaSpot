@@ -1,31 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
+<% layout('layouts/boilerplate')%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Spot</title>
-</head>
-
-<body>
-    <h1>Edit Spot</h1>
-    <form action="/spots/<%=  spot._id%>?_method=PUT" method="POST">
-        <div>
-            <label for="title">Title</label>
-            <input type="text" id="title" name="spot[title]" value="<%= spot.title%>">
+<div class="row">
+    <h1 class="text-center">Edit Spot</h1>
+    <div class="col-md-6 offset-md-3 mb-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <form action="/spots/<%=spot._id%>?_method=PUT" method="POST" novalidate class="validated-form"
+                    enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label" for="title">Title</label>
+                        <input class="form-control" type="text" id="title" name="spot[title]"
+                            value="<%=spot.title %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="locationCityProv">Location (City/Province)</label>
+                        <input class="form-control" type="text" id="locationCityProv" name="spot[locationCityProv]"
+                            value="<%=spot.locationCityProv %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="locationAddress">Adress</label>
+                        <input class="form-control" type="text" id="locationAddress" name="spot[locationAddress]"
+                            value="<%=spot.locationAddress %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="funds">Spot Price</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="funds-label">$</span>
+                            <input type="text" class="form-control" id="funds" placeholder="0.00" aria-label="funds"
+                                aria-describedby="funds-label" name="spot[funds]" value="<%=spot.funds %>"
+                                required><div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mb-3">
+                        <label class="form-label" for="description">Description</label>
+                        <textarea class="form-control" type="text" id="description" name="spot[description]"
+                            required><%= spot.description%></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-file">
+                            <input type="file" class="form-file-input" id="image" name="image" multiple>
+                            <label class="form-file-label" for="image"></label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <% spot.images.forEach(function(img, i) { %>
+                        <img src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
+                        <div class="form-check-inline">
+                            <input type="checkbox" id="image-<%= i %>" name="deleteImages[]" value="<%=img.filename%>">
+                        </div>
+                        <label for="image-<%= i %>">Delete</label>
+                        <% })%>
+                    </div>
+                    <div class="d-grid mb-3">
+                        <button class="btn btn-info">Update Spot</button>
+                    </div>
+                </form>
+                <div class="d-grid">
+                    <a class="btn btn-warning" href="/spots/<%= spot._id%>">Back To Spot</a>
+                </div>
+            </div>
         </div>
-        <div>
-            <label for="location">Location</label>
-            <input type="text" id="location" name="spot[location]" value="<%= spot.location%>">
-        </div>
-        <div>
-            <label for="description">Description</label>
-            <input type="text" id="description" name="spot[description]" value="<%= spot.description%>">
-        </div>
-        <button>Update Spot</button>
-    </form>
-    <a href="/spots/<%= spot._id%>">Back To Spot</a>
-</body>
-
-</html>
+    </div>
+</div>
